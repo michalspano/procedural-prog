@@ -9,3 +9,7 @@
   3. `joel`;
 
 $\Rightarrow$ merged into the `main` branch - __final result__.
+
+## Rules of conduct
+- __File naming conventions:__ `task${n}.java`, where `n` is the number of the file.
+- __Don't commit__ the `class` files.
