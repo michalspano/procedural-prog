@@ -53,13 +53,13 @@ class Task1 {
      * String.join(...) docs: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
     */
 
-    public static String joinedStudentScores(int[] arr)
+    public static String joinedStudentScores(int[] inputArray) 
     {
-        String[] temp = new String[arr.length];
-        for (int i = 0; i < arr.length; i++)
+        String[] tempArray = new String[inputArray.length];
+        for (int i = 0; i < inputArray.length; i++) 
         {
-            temp[i] = String.valueOf(arr[i]);
+          tempArray[i] = String.valueOf(inputArray[i]);
         }
-        return String.join(", ", temp);
+        return String.join(", ", tempArray);
     }
 }
