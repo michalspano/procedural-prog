@@ -6,6 +6,7 @@ class Task2 {
         // TODO: generalize the algorithm; for further application(s)
 
         // constant values
+        // TODO: apply constant naming convention (SNAKE_CASE)
         final int numberOfScores = 7;
         final int[] INTERVAL = {0, 100};
         final String[] ordinalIndicators = { "st", "nd", "rd", "th" };
