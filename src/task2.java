@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Locale;
 
 class Task2 {
     public static void main(String[] agrs) {  
@@ -10,6 +11,7 @@ class Task2 {
         final String[] ordinalIndicators = { "st", "nd", "rd", "th" };
 
         Scanner input = new Scanner(System.in);         // declare the scanner
+        Locale.setDefault(Locale.ENGLISH);              // a decimal place is indicated with a dot
 
         int tempScore;                                  // temporary variable to store the user input
         String currentOrdinalIndicator;                 // store the current ordinal indicator
