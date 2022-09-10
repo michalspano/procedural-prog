@@ -5,28 +5,27 @@ class Task1 {
         // TODO: generalize the algorithm; for further application(s)
 
         // constant values
-        // TODO: apply constant naming convention (SNAKE_CASE)
-        final int numberOfScores = 7;
-        final int[] INTERVAL = {0, 100};
-        final String[] ordinalIndicators = { "st", "nd", "rd", "th" };
+        final int NUMBER_OF_SCORES          = 7;
+        final int[] INTERVAL                = { 0, 100 };
+        final String[] ORDINAL_INDICATORS   = { "st", "nd", "rd", "th" };
 
-        Scanner input = new Scanner(System.in);         // declare the scanner
+        Scanner input = new Scanner(System.in);             // declare the scanner
 
-        int tempScore;                                  // temporary variable to store the user input
-        String currentOrdinalIndicator;                 // store the current ordinal indicator
-        int[] studentScores = new int[numberOfScores];  // array of size numberOfScores to store the user input values
+        int tempScore;                                      // temporary variable to store the user input
+        String currentOrdinalIndicator;                     // store the current ordinal indicator
+        int[] studentScores = new int[NUMBER_OF_SCORES];    // array of size NUMBER_OF_SCORES to store the user input values
       
-        int studentCounter = 0;                         // variable to keep track of the number of students (default value is 0)
-        while (studentCounter < numberOfScores) 
+        int studentCounter = 0;                             // variable to keep track of the number of students (default value is 0)
+        while (studentCounter < NUMBER_OF_SCORES) 
         {       
             // obtain the ordinal indicator using the ternary operator
-            currentOrdinalIndicator = (studentCounter < 3) ? ordinalIndicators[studentCounter] : ordinalIndicators[3];
+            currentOrdinalIndicator = (studentCounter < 3) ? ORDINAL_INDICATORS[studentCounter] : ORDINAL_INDICATORS[3];
 
             // prompt the user to enter the score, and store the value in the tempScore variable
             System.out.printf("Enter the %d%s number: ", studentCounter + 1, currentOrdinalIndicator);
             tempScore = input.nextInt(); 
             
-            // check if the value is within the interval
+            // check if the value is within the INTERVAL
             if (tempScore >= INTERVAL[0] && tempScore <= INTERVAL[1])
             {
                 // assign the value to the array, and increment the studentCounter
@@ -34,7 +33,7 @@ class Task1 {
                 studentCounter++;    
             }
             else
-            {
+            {   
                 // warn the user
                 System.out.printf("Error - Input out of bound. Score can only be between %d and %d.\n", INTERVAL[0], INTERVAL[1]);
             }
