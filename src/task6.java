@@ -1,10 +1,8 @@
-import java.util.Scanner;
-
 public class task6 {
+    static IOScanner scanner = new IOScanner();
     public static void main(String[] args)
     {
-        // TODO: new need Scanner class
-        Scanner input = new Scanner(System.in);
+        scanner.initializeScanner();
         int option;
         
         do {
@@ -15,10 +13,8 @@ public class task6 {
             System.out.println("\t4. Find the highest score and its position.");
             System.out.println("\t5. Collect hashstags from a post.");
             System.out.println("\t6. To exit.");
-            System.out.println();
-            System.out.print("Type your option: ");
 
-            option = input.nextInt();
+            option = scanner.readInt("Type your option");
 
             switch (option) {
                 
@@ -56,7 +52,7 @@ public class task6 {
             }
 
         } while (option != 6);
-        input.close();
+        scanner.closeScanner();
     }
     
     // -----------------------------------------Subroutines-------------------------------------------//
