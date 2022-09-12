@@ -23,24 +23,36 @@ public class task6 {
             switch (option) {
                 
                 // TODO: replace cases
-                case 1 -> {
+                case 1: {
                     "".isEmpty(); 
-                } 
-                case 2 -> {
-                    "".isEmpty();
-                } 
-                case 3 -> {
-                    "".isEmpty();
-                } 
-                case 4 -> {
-                    "".isEmpty();
+                    break;
                 }
-                case 5 -> {
+                case 2: {
                     "".isEmpty();
+                    break;
+                } 
+                case 3: {
+                    "".isEmpty();
+                    break;
+                } 
+                case 4: {
+                    "".isEmpty();
+                    break;
+                }
+                case 5: {
+                    "".isEmpty();
+                    break;
                 }
 
-                case 6 -> System.out.println("Thank you for using our grading system. Have a nice day!");
-                default -> System.out.println("Error - Invalid value. Please type between 1 and 6");
+                case 6: {
+                    System.out.println("Thank you for using our grading system. Have a nice day!");
+                    break;
+                }
+                
+                default: {
+                    System.out.println("Error - Invalid value. Please type between 1 and 6");
+                    break;
+                }
             }
 
         } while (option != 6);
