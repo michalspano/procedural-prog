@@ -16,26 +16,30 @@ public class Menu
     {
         Locale.setDefault(Locale.ENGLISH); // a decimal place is indicated with a dot
         input.initializeScanner();
+
+        readScores();
+        System.out.println("Thank you for your input. Your entered scores are:\n" 
+                            + joinedStudentScores());
+
+        System.out.println("Welcome to the menu. Choose one of the options below: ");
+        System.out.println("1. Register new scores for students.");
+        System.out.println("2. Calculate the mean of the entered scores.");
+        System.out.println("3. Find the two highest and two lowest scores.");
+        System.out.println("4. Find the highest score and its position.");
+        System.out.println("5. Collect hashtags from a post.");
+        System.out.println("6. To exit.");
         
         int option;
         do {
-            // TODO: the menu should only be printed once
-            System.out.println("Welcome to the menu. Choose one of the options below: ");
-            System.out.println("1. Register new scores for students.");
-            System.out.println("2. Calculate the mean of the entered scores.");
-            System.out.println("3. Find the two highest and two lowest scores.");
-            System.out.println("4. Find the highest score and its position.");
-            System.out.println("5. Collect hashtags from a post.");
-            System.out.println("6. To exit.");
-
-            option = input.readInt("Type your option");
+            option = input.readInt("Type your option: ");
 
             switch (option) 
             {
                 case 1: 
                 {
                     readScores(); 
-                    System.out.println(joinedStudentScores());
+                    System.out.println("Thank you for your input. Your entered scores are:\n" 
+                                        + joinedStudentScores());
                     break;
                 }
                 case 2: 
@@ -95,7 +99,7 @@ public class Menu
             currentOrdinalIndicator = (studentCounter < 3) ? ORDINAL_INDICATORS[studentCounter] : ORDINAL_INDICATORS[3];
 
             // prompt the user to enter the score, and store the value in the tempScore variable
-            tempScore = input.readInt("Enter the " + (studentCounter + 1) + currentOrdinalIndicator + " number");
+            tempScore = input.readInt("Enter the score for the " + (studentCounter + 1) + currentOrdinalIndicator + " student ");
 
             // check if the value is within the INTERVAL
             if (tempScore >= INTERVAL[0] && tempScore <= INTERVAL[1]) 
@@ -106,7 +110,7 @@ public class Menu
             } else 
             {
                 // warn the user
-                System.out.printf("Error - Input out of bound. Score can only be between %d and %d.\n", 
+                System.out.printf("Error - Input out of bound. Score can only be between %d  and %d.\n", 
                                   INTERVAL[0], INTERVAL[1]);
             }
         }
@@ -230,7 +234,7 @@ public class Menu
     public static void collectHashtags()
     {
         input.cleanBuffer();
-        String[] post = input.readFullStrSplit(" ", "Type your post");
+        String[] post = input.readFullStrSplit(" ", "Type your post: ");
 
         // TODO?: consider the case when there's only a single $ and nothing else via CodeGrade;
         // - test via CodeGrade; required to deduce the answer
