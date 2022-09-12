@@ -26,7 +26,7 @@ public class IOScanner
      */
     public int readInt(String message) 
     {
-        System.out.print(message + ": ");
+        System.out.print(message);
         return input.nextInt();        
     }
     
@@ -37,7 +37,7 @@ public class IOScanner
      */
     public String readStr(boolean fullStr, String message) 
     {
-        System.out.print(message + ": ");
+        System.out.print(message);
         if (fullStr) 
         {
             return input.nextLine();
@@ -52,7 +52,7 @@ public class IOScanner
      */
     public String[] readFullStrSplit(String separator, String message)
     {
-        System.out.print(message + ": ");
+        System.out.print(message);
         return input.nextLine().split(separator);
     }
 }
