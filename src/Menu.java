@@ -2,6 +2,7 @@ import java.util.Locale;
 import java.util.Arrays;
 
 // TODO: add more comments and polish the code
+// TODO: declare all custom methods above the main method
 public class Menu 
 {
     static IOScanner input = new IOScanner();
