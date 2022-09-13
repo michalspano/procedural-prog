@@ -11,7 +11,7 @@ import java.util.Arrays;
 public class Menu 
 {
     static IOScanner input = new IOScanner();
-    static int[] studentScores;
+    static int[] studentScores = new int[7];
 
     // constant values
     static final int NUMBER_OF_SCORES           = 7;
