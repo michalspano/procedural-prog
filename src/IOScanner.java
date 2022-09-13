@@ -1,6 +1,12 @@
+/***************************************************************************************************
+ * Group Work Assignment 1 - A1-Group 28
+ * File: IOScanner.java
+ * Members: Ionel Pop, Joel Mattson, Michal Spano
+ * For DIT043: Object Oriented Programming; SEM@GU.
+ ***************************************************************************************************/
+
 import java.util.Scanner;
 
-// TODO: add more comments and polish the code
 public class IOScanner 
 {
     static Scanner input;
