@@ -1,12 +1,17 @@
+/***************************************************************************************************
+ * Group Work Assignment 1 - A1-Group 28
+ * File: Menu.java
+ * Members: Ionel Pop, Joel Mattson, Michal Spano
+ * For DIT043: Object Oriented Programming; SEM@GU.
+ ***************************************************************************************************/
+
 import java.util.Locale;
 import java.util.Arrays;
 
-// TODO: add more comments and polish the code
-// TODO: declare all custom methods above the main method
 public class Menu 
 {
     static IOScanner input = new IOScanner();
-    static int[] studentScores = new int[7];
+    static int[] studentScores;
 
     // constant values
     static final int NUMBER_OF_SCORES           = 7;
@@ -17,11 +22,11 @@ public class Menu
     {
         Locale.setDefault(Locale.ENGLISH);  // a decimal place is indicated with a dot
         input.initializeScanner();
-
-        readScores();                       // initial read of the scores
-        System.out.println("Thank you for your input. Your entered scores are:\n" 
-                            + joinedStudentScores());
-
+        
+        // initial read of the scores
+        readScores();                       
+        System.out.println("Thank you for your input. Your entered scores are:\n" + joinedStudentScores());
+        
         System.out.println("Welcome to the menu. Choose one of the options below: ");
         System.out.println("1. Register new scores for students.");
         System.out.println("2. Calculate the mean of the entered scores.");
@@ -33,7 +38,7 @@ public class Menu
         int option;
         do {
             option = input.readInt("Type your option: ");
-
+            
             switch (option) 
             {
                 case 1: 
@@ -88,30 +93,34 @@ public class Menu
 
     //-----------------------------------------Task 1-------------------------------------------//
 
+    /* Analysis:
+     * We use the static array studentScores[] to store the scores entered by the user.
+     * Then we enter a loop until all the scores are entered.
+     * We use a ternary operator to determine the correct ordinal indicator and
+     * we make sure that the scores are within a valid interval.
+     * Last accessed: 09-13-2022 */
+
     public static void readScores() 
-    {
+    {     
         int tempScore;                              // temporary variable to store the user input
         String currentOrdinalIndicator;             // store the current ordinal indicator
 
         int studentCounter = 0;                     // variable to keep track of the number of students (default value is 0)
         while (studentCounter < NUMBER_OF_SCORES) 
         {
-            // obtain the ordinal indicator using the ternary operator
             currentOrdinalIndicator = (studentCounter < 3) ? ORDINAL_INDICATORS[studentCounter] : ORDINAL_INDICATORS[3];
 
-            // prompt the user to enter the score, and store the value in the tempScore variable
             tempScore = input.readInt("Enter the score for the " + (studentCounter + 1) + currentOrdinalIndicator + " student ");
 
             if (isWithinInterval(tempScore)) 
             {
-                // assign the value to the array, and increment the studentCounter
                 studentScores[studentCounter++] = tempScore;
 
             } else 
             {
-                // warn the user
+                // warnt the user with a message
                 System.out.printf("Error - Input out of bound. Score can only be between %d  and %d.\n", 
-                                  INTERVAL[0], INTERVAL[1]);
+                                    INTERVAL[0], INTERVAL[1]);
             }
         }
     }
@@ -120,16 +129,15 @@ public class Menu
      * @param value value input by the user
      * @return boolean value to determine whether the value belongs to the interval or not
      */
-    public static boolean isWithinInterval(int value) 
+    public static boolean isWithinInterval(int value)  
     {
-        if (value >= INTERVAL[0] && value <= INTERVAL[1]) 
-        {
-            return true;
-        } 
+        if (value >= INTERVAL[0] && value <= INTERVAL[1]) return true; 
         return false;
     }
  
     /** 
+     * We use the String join() method to concadenate the scores
+     * and print them with the correct format (per the instructions).
      * @return String
      */
     public static String joinedStudentScores() 
@@ -145,6 +153,8 @@ public class Menu
     //-----------------------------------------Task 2-------------------------------------------//
     
     /** 
+     * Iterate over the studentScores array to get the sum of them.
+     * Then we divide them by the number of students to calculate the mean.
      * @return double
      */
     public static double calculateMean()
@@ -160,6 +170,15 @@ public class Menu
     //-----------------------------------------Task 3-------------------------------------------//    
     
     /** 
+     * Here, we obtain the two highest and two lowest scores of the studentScores array.
+     * We initialise 4 variables to store the values of the extrema. The default values
+     * are the bounds of the interval. Then, we iterate over the array and update the
+     * variables accordingly: if the current value is higher than the first highest value,
+     * we swap the second highest value with the first highest value and then we update
+     * the first highest value. Otherwise, we check if the current value is higher than the
+     * second highest value and update it accordingly. The same logic applies to the lowest values.
+     * Lastly, we return a two-dimensional array with the extrema values per the format:
+     * {{highest1, highest2}, {lowest1, lowest2}}.
      * @return int[][]
      */
     public static int[][] twoExtremaOfScores() 
@@ -194,6 +213,8 @@ public class Menu
     }
 
     /** 
+     * We accpet a two-dimensional array as a parameter and print the extrema values
+     * per the instructions.
      * @param extremaScores
      */
     public static void printExtrema(int[][] extremaScores) 
@@ -211,6 +232,11 @@ public class Menu
     //-----------------------------------------Task 4-------------------------------------------//
         
     /** 
+     * In this method, we determine the highest score and its index. For that, we use an integer array,
+     * that simultaneously stores the index and the value of the highest score. We initialise the array
+     * with the first value of the studentScores array. Then, we iterate over the array and update the
+     * array accordingly: if the current value is higher than the highest value, we update the array
+     * with the current value and its index.
      * @return int[] 
      */
     public static int[] getHighestScoreWithIndex()
@@ -229,6 +255,9 @@ public class Menu
     }
     
     /** 
+     * We use a ternary operator to determine the correct ordinal indicator
+     * based on the values stored in the highestValueStruct. Print the student's
+     * number (with the valid ordinal indicator) and the highest score per the instructions.
      * @param highestValueStruct
      */
     public static void printHighestScoreWithIndex(int[] highestValueStruct)
@@ -249,8 +278,7 @@ public class Menu
         input.cleanBuffer();
         String[] post = input.readFullStrSplit(" ", "Type your post: ");
 
-        /*
-         * Analysis:
+        /* Analysis:
          * If we suppose a post of size n, then there may be at most n hashtags;
          * Then, we initialize an array of size n, i.e, the length of the post.
          * The initial value assigned to each cell of the array is a type of null. 
@@ -260,13 +288,12 @@ public class Menu
         String[] foundHashtags = new String[post.length];
 
         for (int i = 0; i < post.length; i++) {
-            if (post[i].startsWith("#")) { // check if the string begins with the '#' character
-                foundHashtags[hashtagCount++] = post[i]; // this way, we also preserve the order of the hashtag
+            if (post[i].startsWith("#")) {          // check if the string begins with the '#' character
+                foundHashtags[hashtagCount++] = post[i];    // this way, we also preserve the order of the hashtag
             }
         }
 
-        /*
-         * Analysis:
+        /* Analysis:
          * For the Arrays.copyOfRange() method, documentation from oracle.com:
          * https://docs.oracle.com/javase/6/docs/api/java/util/Arrays.html
          * By doing so, we remove all the null values from the array, i.e., create a
