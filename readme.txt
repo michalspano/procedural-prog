@@ -35,6 +35,6 @@ SPECIFIC TASK DIVISION
     for the tasks 7 and 8, where the members have discussed the implementation of the custom Scanner class and
     the refactoring of the source code into subsequent subroutines. Similarly, after each member has implemented
     their own versions of 1 through 5, the members have discussed possible pros and cons of each implementation
-    and have decided on the final version of the code, which is a combined version of all three members' contributions.
-    Lastly, the members have discussed and proposed generalized solutions for some of the tasks which are indicated 
-    in the `Menu.java` file inside block comments.
+    and have decided on the final version of the code, which is a combined version of all three members' 
+    contributions. Lastly, the members have discussed and proposed generalized solutions for some of the tasks 
+    which are indicated in the `Menu.java` file inside block comments.
