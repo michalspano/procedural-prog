@@ -19,7 +19,8 @@ SPECIFIC TASK DIVISION
     The specific tasks that each member has been assigned are the following:
         - Ionel: 
             own implementations of the task 1 through 5; work on the Menu part of the program; work on the custom
-            Scanner class (`IOScanner.java`) and refactoring the source code into subsequent subroutines.
+            Scanner class (`IOScanner.java`) and refactoring the source code into subsequent subroutines; help 
+            with refactoring of generalized algorithms proposed by Joel.
 
         - Joel: 
             own implementations of the task 1 through 5; implementation of generalized functionalities for the 
@@ -29,7 +30,8 @@ SPECIFIC TASK DIVISION
         - Michal: 
             own implementations of the task 1 through 5; communication platform for the group; VSC (via Git) 
             management; work on the custom Scanner class (`IOScanner.java`) and refactoring the source code into 
-            subsequent subroutines; analysis of the source code via comments.
+            subsequent subroutines; analysis of the source code via comments; help with refactoring of generalized 
+            algorithms proposed by Joel.
 
     *Most of the tasks were done in parallel, that is, during a meeting or via a communication platform, such as
     for the tasks 7 and 8, where the members have discussed the implementation of the custom Scanner class and
