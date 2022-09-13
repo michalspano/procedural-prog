@@ -15,10 +15,10 @@ public class Menu
 
     public static void main(String[] args)
     {
-        Locale.setDefault(Locale.ENGLISH); // a decimal place is indicated with a dot
+        Locale.setDefault(Locale.ENGLISH);  // a decimal place is indicated with a dot
         input.initializeScanner();
 
-        readScores();
+        readScores();                       // initial read of the scores
         System.out.println("Thank you for your input. Your entered scores are:\n" 
                             + joinedStudentScores());
 
@@ -102,8 +102,7 @@ public class Menu
             // prompt the user to enter the score, and store the value in the tempScore variable
             tempScore = input.readInt("Enter the score for the " + (studentCounter + 1) + currentOrdinalIndicator + " student ");
 
-            // check if the value is within the INTERVAL
-            if (tempScore >= INTERVAL[0] && tempScore <= INTERVAL[1]) 
+            if (isWithinInterval(tempScore)) 
             {
                 // assign the value to the array, and increment the studentCounter
                 studentScores[studentCounter++] = tempScore;
@@ -116,7 +115,20 @@ public class Menu
             }
         }
     }
-
+    
+    /** 
+     * @param value value input by the user
+     * @return boolean value to determine whether the value belongs to the interval or not
+     */
+    public static boolean isWithinInterval(int value) 
+    {
+        if (value >= INTERVAL[0] && value <= INTERVAL[1]) 
+        {
+            return true;
+        } 
+        return false;
+    }
+ 
     /** 
      * @return String
      */
@@ -237,13 +249,10 @@ public class Menu
         input.cleanBuffer();
         String[] post = input.readFullStrSplit(" ", "Type your post: ");
 
-        // TODO?: consider the case when there's only a single $ and nothing else via CodeGrade;
-        // - test via CodeGrade; required to deduce the answer
-
         /*
          * Analysis:
          * If we suppose a post of size n, then there may be at most n hashtags;
-         * Then, we initialise an array of size n, i.e, the length of the post.
+         * Then, we initialize an array of size n, i.e, the length of the post.
          * The initial value assigned to each cell of the array is a type of null. 
          * Last accessed: 09-09-2022 */
 
@@ -251,7 +260,7 @@ public class Menu
         String[] foundHashtags = new String[post.length];
 
         for (int i = 0; i < post.length; i++) {
-            if (post[i].startsWith("#")) { // chech if the string begins with the '#' character
+            if (post[i].startsWith("#")) { // check if the string begins with the '#' character
                 foundHashtags[hashtagCount++] = post[i]; // this way, we also preserve the order of the hashtag
             }
         }
@@ -264,13 +273,13 @@ public class Menu
          * subset of the array.
          * Last accessed: 09-09-2022 */
 
-        String[] foundHastagsSubset = Arrays.copyOfRange(foundHashtags, 0, hashtagCount);
+        String[] foundHashtagsSubset = Arrays.copyOfRange(foundHashtags, 0, hashtagCount);
 
         // check for the case when no hashtags are found, otherwise join all the hashtags per the instructions
         if (hashtagCount == 0) {
             System.out.println("No hashtags were typed.");
         } else {
-            System.out.println("Hashtags found: " + String.join(" ", foundHastagsSubset));
+            System.out.println("Hashtags found: " + String.join(" ", foundHashtagsSubset));
         }
     }
 
