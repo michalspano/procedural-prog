@@ -27,16 +27,9 @@ public class Menu
         readScores();                       
         System.out.println("Thank you for your input. Your entered scores are:\n" + joinedStudentScores());
         
-        System.out.println("Welcome to the menu. Choose one of the options below: ");
-        System.out.println("1. Register new scores for students.");
-        System.out.println("2. Calculate the mean of the entered scores.");
-        System.out.println("3. Find the two highest and two lowest scores.");
-        System.out.println("4. Find the highest score and its position.");
-        System.out.println("5. Collect hashtags from a post.");
-        System.out.println("6. To exit.");
-        
         int option;
         do {
+            displayMenu();
             option = input.readInt("Type your option: ");
             
             switch (option) 
@@ -90,6 +83,16 @@ public class Menu
     }
     
     // -----------------------------------------Subroutines-------------------------------------------//
+
+    public static void displayMenu() {
+        System.out.println("Welcome to the menu. Choose one of the options below: ");
+        System.out.println("1. Register new scores for students.");
+        System.out.println("2. Calculate the mean of the entered scores.");
+        System.out.println("3. Find the two highest and two lowest scores.");
+        System.out.println("4. Find the highest score and its position.");
+        System.out.println("5. Collect hashtags from a post.");
+        System.out.println("6. To exit.");
+    }
 
     //-----------------------------------------Task 1-------------------------------------------//
 
