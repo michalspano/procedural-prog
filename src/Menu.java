@@ -1,7 +1,7 @@
 /***************************************************************************************************
  * Group Work Assignment 1 - A1-Group 28
  * File: Menu.java
- * Members: Ionel Pop, Joel Mattson, Michal Spano
+ * Members: Ionel Pop, Joel Mattsson, Michal Spano
  * For DIT043: Object Oriented Programming; SEM@GU.
  ***************************************************************************************************/
 
@@ -25,7 +25,8 @@ public class Menu
         
         // initial read of the scores
         readScores();                       
-        System.out.println("Thank you for your input. Your entered scores are:\n" + joinedStudentScores());
+        System.out.println("Thank you for your input. Your entered scores are:\n" 
+                            + joinedStudentScores());
         
         int option;
         do {
@@ -121,7 +122,7 @@ public class Menu
 
             } else 
             {
-                // warnt the user with a message
+                // warn the user with a message
                 System.out.printf("Error - Input out of bound. Score can only be between %d  and %d.\n", 
                                     INTERVAL[0], INTERVAL[1]);
             }
@@ -139,7 +140,7 @@ public class Menu
     }
  
     /** 
-     * We use the String join() method to concadenate the scores
+     * We use the String join() method to concatenate the scores
      * and print them with the correct format (per the instructions).
      * @return String
      */
@@ -174,7 +175,7 @@ public class Menu
     
     /** 
      * Here, we obtain the two highest and two lowest scores of the studentScores array.
-     * We initialise 4 variables to store the values of the extrema. The default values
+     * We initialize 4 variables to store the values of the extrema. The default values
      * are the bounds of the interval. Then, we iterate over the array and update the
      * variables accordingly: if the current value is higher than the first highest value,
      * we swap the second highest value with the first highest value and then we update
@@ -216,7 +217,7 @@ public class Menu
     }
 
     /** 
-     * We accpet a two-dimensional array as a parameter and print the extrema values
+     * We accept a two-dimensional array as a parameter and print the extrema values
      * per the instructions.
      * @param extremaScores
      */
@@ -236,7 +237,7 @@ public class Menu
         
     /** 
      * In this method, we determine the highest score and its index. For that, we use an integer array,
-     * that simultaneously stores the index and the value of the highest score. We initialise the array
+     * that simultaneously stores the index and the value of the highest score. We initialize the array
      * with the first value of the studentScores array. Then, we iterate over the array and update the
      * array accordingly: if the current value is higher than the highest value, we update the array
      * with the current value and its index.
@@ -289,6 +290,13 @@ public class Menu
 
         int hashtagCount = 0;
         String[] foundHashtags = new String[post.length];
+
+        /* In real life scenario, a hashtag which is only the '#' character is not valid.
+         * Therefore, we check if the first character of the string is a '#'. If it is,
+         * we check if the string is longer than 1 character. If it is, we add the 
+         * string to the foundHashtags array. Otherwise, we ignore it. 
+         * if (post[i].startsWith("#") && post[i].length() > 1) {...} 
+         * Last accessed: 15-09-2022 */
 
         for (int i = 0; i < post.length; i++) {
             if (post[i].startsWith("#")) {          // check if the string begins with the '#' character
