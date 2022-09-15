@@ -24,8 +24,8 @@ SPECIFIC TASK DIVISION
 
         - Joel: 
             own implementations of the task 1 through 5; implementation of generalized functionalities for the 
-            initial tasks, these are indicated in the `Menu.java` file inside block comments; work on the custom
-            Scanner class (`IOScanner.java`) and refactoring the source code into subsequent subroutines.
+            initial tasks, included in `GeneralAlgorithms.java`; work on the custom Scanner class (`IOScanner.java`) 
+            and refactoring the source code into subsequent subroutines.
 
         - Michal: 
             own implementations of the task 1 through 5; communication platform for the group; VSC (via Git) 
@@ -39,4 +39,4 @@ SPECIFIC TASK DIVISION
     their own versions of 1 through 5, the members have discussed possible pros and cons of each implementation
     and have decided on the final version of the code, which is a combined version of all three members' 
     contributions. Lastly, the members have discussed and proposed generalized solutions for some of the tasks 
-    which are indicated in the `Menu.java` file inside block comments.
+    which are included in the `GeneralAlgorithms.java` file.
