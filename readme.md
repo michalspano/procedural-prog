@@ -4,4 +4,5 @@ This **repository** contains the source code for the 1st assignment of the **cou
 
 ### Acknowledgement
 
-Authors: Ionel Pop, Joel Mattson, Michal Spano.
+- Authors: Ionel Pop, Joel Mattson, Michal Spano
+- Unit testing: Francisco Gomes de Oliveira Neto
